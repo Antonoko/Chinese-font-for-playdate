@@ -1,4 +1,4 @@
-# Create Chinese font for playdate
+# Create Chinese font for Playdate
 
 为 Playdate 生成中文字体
 
