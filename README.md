@@ -15,7 +15,7 @@
 
 
 ## 如何转换字体
-1. Clone 仓库到本地
+1. Clone 仓库到本地: `git clone https://github.com/Antonoko/Chinese-font-for-playdate`
 2. 安装依赖 `pip install -r requirements.txt`；
 3. 将准备生成的字体放在 `font_asset` 或其他目录下；
 4. 使用 python jupyter notebook 环境执行 `make_font.ipynb`，填写字体文件、生成字号等信息，Run ALL 进行生成；
