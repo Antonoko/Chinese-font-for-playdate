@@ -14,6 +14,7 @@
     - fusion-pixel-font-24px-proportional-zh_hans （在 12px 字体上以两倍大小渲染）
 - [LXGW WenKai Screen / 霞鹜文楷屏幕阅读版](https://github.com/lxgw/LxgwWenKai-Screen?tab=readme-ov-file)
     - LXGWWenKaiGBScreen-24px
+    - LXGWWenKaiGBScreen-24px-anti-aliasing （抗锯齿版本）
 
 
 ## 如何转换字体
