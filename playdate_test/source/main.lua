@@ -1,6 +1,4 @@
-import "CoreLibs/object"
 import "CoreLibs/graphics"
-import "CoreLibs/sprites"
 
 local gfx <const> = playdate.graphics
 local screenWidth = playdate.display.getWidth()

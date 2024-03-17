@@ -18,3 +18,18 @@
 1. 安装依赖 `pip install -r requirements.txt`；
 2. 将准备生成的字体放在 `font_asset` 或其他目录下；
 2. 使用 python jupyter notebook 环境执行 `make_font.ipynb`，填写字体文件、生成字号等信息，Run ALL 进行生成；
+
+
+## 如何使用字体
+根据 (Playdate 文档)[https://sdk.play.date/2.4.1/Inside%20Playdate.html#_text] 正常引入使用即可。
+
+```lua
+import "CoreLibs/graphics"
+local gfx <const> = playdate.graphics
+local font_12 = gfx.font.new('font/fusion-pixel-font-12px-proportional-zh_hans')
+
+function playdate.update()
+    gfx.setFont(font_12)
+    gfx.drawText('你好世界', 2, 2)
+end
+```
