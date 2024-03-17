@@ -15,9 +15,10 @@
 
 
 ## 如何转换字体
-1. 安装依赖 `pip install -r requirements.txt`；
-2. 将准备生成的字体放在 `font_asset` 或其他目录下；
-2. 使用 python jupyter notebook 环境执行 `make_font.ipynb`，填写字体文件、生成字号等信息，Run ALL 进行生成；
+1. Clone 仓库到本地
+2. 安装依赖 `pip install -r requirements.txt`；
+3. 将准备生成的字体放在 `font_asset` 或其他目录下；
+4. 使用 python jupyter notebook 环境执行 `make_font.ipynb`，填写字体文件、生成字号等信息，Run ALL 进行生成；
 
 
 ## 如何使用字体
