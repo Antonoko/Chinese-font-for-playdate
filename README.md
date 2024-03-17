@@ -18,13 +18,13 @@
 
 ## 如何转换字体
 1. Clone 仓库到本地: `git clone https://github.com/Antonoko/Chinese-font-for-playdate`
-2. 安装依赖 `pip install -r requirements.txt`；
-3. 将准备生成的字体放在 `font_asset` 或其他目录下；
-4. 使用 python jupyter notebook 环境执行 `make_font.ipynb`，填写字体文件、生成字号等信息，Run ALL 进行生成；
+2. 安装依赖 `pip install -r requirements.txt`
+3. 准备要生成的字体文件（如.ttf），放在 `font_asset` 或其他目录下；
+4. 使用 python jupyter notebook 环境执行 `make_font.ipynb`，填写字体文件路径、生成字号等信息，Run ALL 进行生成；
 
 
 ## 如何使用字体
-根据 (Playdate 文档)[https://sdk.play.date/2.4.1/Inside%20Playdate.html#_text] 正常引入使用即可。
+根据 [Playdate 文档](https://sdk.play.date/2.4.1/Inside%20Playdate.html#_text) 正常引入使用即可。
 
 ```lua
 import "CoreLibs/graphics"
