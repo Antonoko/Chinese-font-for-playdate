@@ -23,6 +23,10 @@
 3. 准备要生成的字体文件（如.ttf），放在 `font_asset` 或其他目录下；
 4. 使用 python jupyter notebook 环境执行 `make_font.ipynb`，填写字体文件路径、生成字号等信息，Run ALL 进行生成；
 
+> [!TIP]
+>
+> 如果你只需要显示一部分的中文文字，可以自定义 TEXT_TABLE_STR 来覆盖仅会用到的文本，以降低储存与性能开销、同时使所有文字都能正常显示。
+
 
 ## 如何使用字体
 根据 [Playdate 文档](https://sdk.play.date/2.4.1/Inside%20Playdate.html#_text) 正常引入使用即可。
