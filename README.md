@@ -27,6 +27,9 @@
 >
 > 如果你只需要显示一部分的中文文字，可以自定义 TEXT_TABLE_STR 来覆盖仅会用到的文本，以降低储存与性能开销、同时使所有文字都能正常显示。
 
+> [!IMPORTANT]
+>
+> 欢迎通过 issue/PR 提交你生成的新字体，我们会将它放在 release 文件夹下提供。😉（如有使用 license 也请一并附上）
 
 ## 如何使用字体
 根据 [Playdate 文档](https://sdk.play.date/2.4.1/Inside%20Playdate.html#_text) 正常引入使用即可。
