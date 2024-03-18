@@ -22,6 +22,7 @@
 2. 安装依赖 `pip install -r requirements.txt`
 3. 准备要生成的字体文件（如.ttf），放在 `font_asset` 或其他目录下；
 4. 使用 python jupyter notebook 环境执行 `make_font.ipynb`，填写字体文件路径、生成字号等信息，Run ALL 进行生成；
+5. 执行 `rotate_font_direction.ipynb` 可以 +90°/-90°/180° 旋转字体，以适应为不同方向制作的 Playdate 程序；
 
 > [!TIP]
 >
