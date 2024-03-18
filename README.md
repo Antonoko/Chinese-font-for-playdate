@@ -15,6 +15,12 @@
 - [LXGW WenKai Screen / 霞鹜文楷屏幕阅读版](https://github.com/lxgw/LxgwWenKai-Screen?tab=readme-ov-file)
     - LXGWWenKaiGBScreen-24px
     - LXGWWenKaiGBScreen-24px-anti-aliasing （抗锯齿版本）
+- SourceHanSansCN / 思源黑体
+    - SourceHanSansCN-M-24px
+- OPPOSans
+    - OPPOSans-M-24px
+- Apple
+    - PingFang-M-24px
 
 
 ## 如何转换字体
