@@ -17,6 +17,8 @@
     - LXGWWenKaiGBScreen-24px-anti-aliasing （抗锯齿版本）
 - SourceHanSansCN / 思源黑体
     - SourceHanSansCN-M-24px
+- SourceHanSerifCN / 思源宋体
+    - SourceHanSerifCN-SemiBold-30px
 - OPPOSans
     - OPPOSans-M-24px
 - Apple
