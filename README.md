@@ -53,3 +53,78 @@ function playdate.update()
     gfx.drawText('你好世界', 2, 2)
 end
 ```
+
+## 如何渲染字体
+`playdate.graphics.drawTextInRect` 在渲染中文段落时会存在非正确换行排版的问题，此处提供一个替代函数。
+需要注意的是，由于 lua 对 Unicode 支持较差，因此需要传入的 `text_tbl` 为包含若干独立字符的 table，而非 string。
+```lua
+function draw_text_area(text_tbl, lineheight_factor, char_kerning, font, draw_mode, start_x, start_y, width, height)
+    -- example:
+    -- draw_text_area({"你","好"}, 1.6, 0, gfx.font.new('font/SourceHanSansCN-M-20px'), playdate.graphics.kDrawModeCopy, 0, 0, 300, 200)
+    --
+    -- return:
+    -- char_offset: how many chars has been drawn
+
+    function _findNextSpaceIndex(tbl, index)
+        if index >= #tbl then
+            return -1
+        end
+        for i = index + 1, #tbl do
+            if tbl[i] == " " then
+                if i > 12 then  --max line break char length
+                    return -1
+                else
+                    return i
+                end
+            end
+        end
+        return -1
+    end
+
+    local char_offset = 0
+    local current_x = start_x
+    local current_y = start_y
+    gfx.setFont(font)
+    gfx.setImageDrawMode(draw_mode)
+    local max_zh_char_size = gfx.getTextSize("啊") + char_kerning
+    local lineheight = max_zh_char_size * lineheight_factor
+
+    function _linebreak_offset()
+        current_x = start_x
+        current_y += lineheight
+    end
+
+    for key, char in pairs(text_tbl) do
+        char_offset += 1
+        if char == "\n" then
+            _linebreak_offset()
+        else
+            if char == " " then  --word break
+                local next_space_index = _findNextSpaceIndex(text_tbl, key)
+                local word_width = 0
+                if next_space_index > 1 and next_space_index > key then
+                    for i = key+1, next_space_index do
+                        word_width += gfx.getTextSize(text_tbl[i]) + char_kerning
+                    end
+                    if current_x + word_width > width - max_zh_char_size then
+                        _linebreak_offset()
+                    end
+                end
+            end
+            
+            gfx.drawTextAligned(char, current_x, current_y, kTextAlignment.left)
+            current_x += gfx.getTextSize(char) + char_kerning
+        end
+        
+        if current_x > width - max_zh_char_size then
+            _linebreak_offset()
+        end
+
+        if current_y > height then
+            break
+        end
+    end
+
+    return char_offset
+end
+```
