@@ -81,7 +81,7 @@ function draw_text_area(text_tbl, lineheight_factor, char_kerning, font, draw_mo
         return -1
     end
 
-    local char_offset = 0
+    local char_offset = 1
     local current_x = start_x
     local current_y = start_y
     gfx.setFont(font)
@@ -95,7 +95,10 @@ function draw_text_area(text_tbl, lineheight_factor, char_kerning, font, draw_mo
     end
 
     for key, char in pairs(text_tbl) do
-        char_offset += 1
+        if current_y > height - lineheight then
+            break
+        end
+
         if char == "\n" then
             _linebreak_offset()
         else
@@ -120,9 +123,7 @@ function draw_text_area(text_tbl, lineheight_factor, char_kerning, font, draw_mo
             _linebreak_offset()
         end
 
-        if current_y > height then
-            break
-        end
+        char_offset += 1
     end
 
     return char_offset
