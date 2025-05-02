@@ -54,7 +54,7 @@ function playdate.update()
 end
 ```
 
-## 如何渲染字体
+## 如何渲染段落
 `playdate.graphics.drawTextInRect` 在渲染中文段落时会存在非正确换行排版的问题，此处提供一个替代函数。
 需要注意的是，由于 lua 对 Unicode 支持较差，因此需要传入的 `text_tbl` 为包含若干独立字符的 table，而非 string。
 ```lua
