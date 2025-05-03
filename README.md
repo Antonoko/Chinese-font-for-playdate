@@ -95,7 +95,7 @@ function draw_text_area(text_tbl, lineheight_factor, char_kerning, font, draw_mo
     end
 
     for key, char in pairs(text_tbl) do
-        if current_y > height - lineheight then
+        if current_y > start_y + height - lineheight then
             break
         end
 
@@ -109,7 +109,7 @@ function draw_text_area(text_tbl, lineheight_factor, char_kerning, font, draw_mo
                     for i = key+1, next_space_index do
                         word_width += gfx.getTextSize(text_tbl[i]) + char_kerning
                     end
-                    if current_x + word_width > width - max_zh_char_size then
+                    if current_x + word_width > start_x + width - max_zh_char_size then
                         _linebreak_offset()
                     end
                 end
@@ -119,7 +119,7 @@ function draw_text_area(text_tbl, lineheight_factor, char_kerning, font, draw_mo
             current_x += gfx.getTextSize(char) + char_kerning
         end
         
-        if current_x > width - max_zh_char_size then
+        if current_x > start_x + width - max_zh_char_size then
             _linebreak_offset()
         end
 
